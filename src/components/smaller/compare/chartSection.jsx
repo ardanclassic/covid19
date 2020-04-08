@@ -22,6 +22,7 @@ class chartSection extends Component {
 
     componentWillUnmount() { this.mounted = false; }
     componentDidMount = async () => {
+        this.props.refreshDispatch();
         this.mounted = true;
         let gt = await axios.get('https://covidapi.info/api/v1/global/count');
         if (gt && this.mounted) {

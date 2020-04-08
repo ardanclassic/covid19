@@ -45,8 +45,8 @@ export const newsFirst = [
     },
     {
         id: 6,
-        header: 'BNPB InaCOVID-19',
-        provider: 'covid19.go.id',
+        header: 'InaCOVID-19',
+        provider: 'BNPB',
         link: 'https://bnpb-inacovid19.hub.arcgis.com/',
         color: 'brown',
     },
@@ -106,7 +106,7 @@ export const itemsAPI = [
     },
     {
         id: 5,
-        header: 'BNPB InaCOVID-19',
+        header: 'BNPB',
         logo: garuda,
         link: 'https://bnpb-inacovid19.hub.arcgis.com/datasets/covid19-indonesia-per-provinsi',
     },
