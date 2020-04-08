@@ -38,19 +38,24 @@ class Headnav extends Component {
                                 <Button icon='bars' color='black' onClick={this.showMenu} />
                             </Responsive>
                             <Responsive as={React.Fragment} minWidth={768}>
-                                <Menu.Item name='Global' id='global' as={ Link } to='/'
+                                <Menu.Item name='Global' id='global' as={ Link } 
+                                    to={ process.env.PUBLIC_URL + '/' }
                                     active={ activeItem === 'global' }
                                     onClick={ this.handleItemClick } />
-                                <Menu.Item name='Indonesia' id='indonesia' as={ Link } to='/indonesia'
+                                <Menu.Item name='Indonesia' id='indonesia' as={ Link } 
+                                    to={ process.env.PUBLIC_URL + '/indonesia' }
                                     active={activeItem === 'indonesia'}
                                     onClick={this.handleItemClick} />
-                                <Menu.Item name='Compare' id='compare' as={ Link } to='/compare'
+                                <Menu.Item name='Compare' id='compare' as={ Link } 
+                                    to={ process.env.PUBLIC_URL + '/compare' }
                                     active={activeItem === 'compare'}
                                     onClick={this.handleItemClick} />
-                                <Menu.Item name='Hotline' id='hotline' as={ Link } to='/hotline'
+                                <Menu.Item name='Hotline' id='hotline' as={ Link } 
+                                    to={ process.env.PUBLIC_URL + '/hotline' }
                                     active={activeItem === 'hotline'}
                                     onClick={this.handleItemClick} />
-                                <Menu.Item name='Informasi' id='resource' as={ Link } to='/resource'
+                                <Menu.Item name='Informasi' id='resource' as={ Link } 
+                                    to={ process.env.PUBLIC_URL + '/resource' }
                                     active={activeItem === 'resource'}
                                     onClick={this.handleItemClick} />
                             </Responsive>
