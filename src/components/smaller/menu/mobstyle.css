@@ -19,6 +19,11 @@
     text-align: center;
 }
 
+.overlay-content .divider {
+    border-color: #8b0000 !important;
+    border-bottom: none;
+}
+
 .overlay a {
     text-decoration: none;
     font-size: 26px;
