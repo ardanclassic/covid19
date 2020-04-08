@@ -72,13 +72,15 @@ class chartSection extends Component {
     }
     
     setDataTimeline = async (a, b) => {
-        const { status } = this.state;
-        let first = await axios.get(`https://covidapi.info/api/v1/country/${a.countryInfo.iso3}`);
-        let second = await axios.get(`https://covidapi.info/api/v1/country/${b.countryInfo.iso3}`);
-        if (first && second) {
-            const pre = [ first.data.result, second.data.result ]
-            const data = this.props.setDataSeries(pre, status)
-            this.setState({ tlc1: data[0], tlc2: data[1] }); 
+        if (a && b) {
+            const { status } = this.state;
+            let first = await axios.get(`https://covidapi.info/api/v1/country/${a.countryInfo.iso3}`);
+            let second = await axios.get(`https://covidapi.info/api/v1/country/${b.countryInfo.iso3}`);
+            if (first && second) {
+                const pre = [ first.data.result, second.data.result ]
+                const data = this.props.setDataSeries(pre, status)
+                this.setState({ tlc1: data[0], tlc2: data[1] }); 
+            }
         }
     }
 
