@@ -14,14 +14,14 @@
 .overlay-content {
     position: relative;
     top: 15%;
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
     text-align: center;
-    margin-top: 30px;
 }
 
 .overlay a {
     text-decoration: none;
-    font-size: 36px;
+    font-size: 26px;
     color: #cfcfcf;
     display: block;
     transition: 0.3s;

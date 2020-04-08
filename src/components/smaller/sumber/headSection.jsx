@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { headTitle } from '../../helpers';
+import { animateScroll } from 'react-scroll';
 
 class headSection extends Component {
     state = {
@@ -9,6 +10,8 @@ class headSection extends Component {
             icon: 'book',
         }
     }
+    
+    componentDidMount() { animateScroll.scrollToTop(); }
 
     render() {
         return (

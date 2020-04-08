@@ -3,6 +3,7 @@ import axios from 'axios';
 import { headTitle, setInfo } from '../../helpers';
 import { Dropdown, Grid, Loader } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import { animateScroll } from 'react-scroll';
 import { initCountryName, setCountrySelected, setShowStatus } from '../../redux/action';
 
 class headSection extends Component {
@@ -17,6 +18,7 @@ class headSection extends Component {
 
     componentWillUnmount() { this.mounted = false; }
     componentDidMount = async () => {
+        animateScroll.scrollToTop();
         this.mounted = true;
         let countries = await axios.get('https://corona.lmao.ninja/countries?sort=country');
         if (countries && this.mounted) {

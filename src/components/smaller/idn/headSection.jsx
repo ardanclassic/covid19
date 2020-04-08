@@ -4,6 +4,7 @@ import { InfoStatus } from '../../helpers';
 import { ModSegment, HeadSection, LastUpdated } from '../../../styled';
 import { Header, Divider, Grid } from 'semantic-ui-react';
 import { timeConverter } from '../../helpers';
+import { animateScroll } from 'react-scroll';
 
 class headSection extends Component {
     state = {
@@ -14,6 +15,7 @@ class headSection extends Component {
 
     componentWillUnmount() { this.mounted = false; }
     componentDidMount = async () => {
+        animateScroll.scrollToTop();
         this.mounted = true;
         let indonesia = await axios.get('https://corona.lmao.ninja/countries/indonesia');
         if (indonesia && this.mounted) {

@@ -4,6 +4,7 @@ import { Grid } from 'semantic-ui-react';
 import { headTitle, InfoStatus } from '../../helpers';
 import axios from 'axios';
 import { timeConverter } from '../../helpers';
+import { animateScroll } from 'react-scroll';
 
 class headSection extends Component {
     state = {
@@ -18,6 +19,7 @@ class headSection extends Component {
 
     componentWillUnmount() { this.mounted = false; }
     componentDidMount = async () => {
+        animateScroll.scrollToTop();
         this.mounted = true;
         let global = await axios.get('https://corona.lmao.ninja/all');
         if (global && this.mounted) {
