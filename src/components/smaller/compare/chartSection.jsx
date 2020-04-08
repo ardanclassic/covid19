@@ -32,9 +32,9 @@ class chartSection extends Component {
         }
     }
 
-    async componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate = async (prevProps, prevState) => {
         this.mounted = true;
-        const { country_1, country_2 } = this.props;
+        const { country_1, country_2 } = await this.props;
         const { tlc1, tlc2, x_axis, status } = this.state;
         const pre1 = prevProps.country_1 !== country_1;
         const pre2 = prevProps.country_2 !== country_2;
@@ -45,17 +45,8 @@ class chartSection extends Component {
         if (pre1 || pre2 || sort) {
             if (country_1 && country_2) {
                 if (this.mounted) {
-                    // this.setDataTimeline(country_1, country_2)
-                    const { status } = this.state;
-                    const link1 = "https://covidapi.info/api/v1/country/" + country_1.countryInfo.iso3;
-                    const link2 = "https://covidapi.info/api/v1/country/" + country_2.countryInfo.iso3;
-                    let first = await axios.get(link1);
-                    let second = await axios.get(link2);
-                    if (first && second) {
-                        const pre = [ first.data.result, second.data.result ]
-                        const data = this.props.setDataSeries(pre, status)
-                        this.setState({ tlc1: data[0], tlc2: data[1] }); 
-                    }
+                    console.log(country_1, country_2)
+                    this.setDataTimeline(country_1, country_2)
                 }
             }
         }
@@ -82,16 +73,13 @@ class chartSection extends Component {
     }
     
     setDataTimeline = async (a, b) => {
-        if (a && b) {
-            console.log(a, b)
-            const { status } = this.state;
-            let first = await axios.get(`https://covidapi.info/api/v1/country/${a.countryInfo.iso3}`);
-            let second = await axios.get(`https://covidapi.info/api/v1/country/${b.countryInfo.iso3}`);
-            if (first && second) {
-                const pre = [ first.data.result, second.data.result ]
-                const data = this.props.setDataSeries(pre, status)
-                this.setState({ tlc1: data[0], tlc2: data[1] }); 
-            }
+        const { status } = this.state;
+        let first = await axios.get(`https://covidapi.info/api/v1/country/${a.countryInfo.iso3}`);
+        let second = await axios.get(`https://covidapi.info/api/v1/country/${b.countryInfo.iso3}`);
+        if (first && second) {
+            const pre = [ first.data.result, second.data.result ]
+            const data = this.props.setDataSeries(pre, status)
+            this.setState({ tlc1: data[0], tlc2: data[1] }); 
         }
     }
 

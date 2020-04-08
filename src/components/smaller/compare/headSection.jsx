@@ -67,7 +67,6 @@ class headSection extends Component {
 
     setDropdown = () => {
         const { countryList } = this.props;
-
         if (countryList.length > 0) {
             return (
                 <React.Fragment>
