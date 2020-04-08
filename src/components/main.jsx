@@ -14,11 +14,11 @@ class main extends Component {
                 <MobileMenu />
                 <Container className='main-container'>
                     <Switch>
-                        <Route exact path="/" component={ globalPage } />
-                        <Route exact path="/indonesia" component={ idnPage } />
-                        <Route exact path="/compare" component={ compPage } />
-                        <Route exact path="/hotline" component={ HotlinePage } />
-                        <Route exact path="/resource" component={ SourcePage } />
+                        <Route path="/" component={ globalPage } />
+                        <Route path="/indonesia" component={ idnPage } />
+                        <Route path="/compare" component={ compPage } />
+                        <Route path="/hotline" component={ HotlinePage } />
+                        <Route path="/resource" component={ SourcePage } />
                     </Switch>
                 </Container>
                 <Footmask />
