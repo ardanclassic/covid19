@@ -47,8 +47,8 @@ class chartSection extends Component {
                 if (this.mounted) {
                     // this.setDataTimeline(country_1, country_2)
                     const { status } = this.state;
-                    const link1 = "https://covidapi.info/api/v1/country" + country_1.countryInfo.iso3;
-                    const link2 = "https://covidapi.info/api/v1/country" + country_2.countryInfo.iso3;
+                    const link1 = "https://covidapi.info/api/v1/country/" + country_1.countryInfo.iso3;
+                    const link2 = "https://covidapi.info/api/v1/country/" + country_2.countryInfo.iso3;
                     let first = await axios.get(link1);
                     let second = await axios.get(link2);
                     if (first && second) {
