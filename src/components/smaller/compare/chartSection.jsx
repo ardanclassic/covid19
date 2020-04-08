@@ -32,7 +32,7 @@ class chartSection extends Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    async componentDidUpdate(prevProps, prevState) {
         this.mounted = true;
         const { country_1, country_2 } = this.props;
         const { tlc1, tlc2, x_axis, status } = this.state;
@@ -45,7 +45,15 @@ class chartSection extends Component {
         if (pre1 || pre2 || sort) {
             if (country_1 && country_2) {
                 if (this.mounted) {
-                    this.setDataTimeline(country_1, country_2)
+                    // this.setDataTimeline(country_1, country_2)
+                    const { status } = this.state;
+                    let first = await axios.get(`https://covidapi.info/api/v1/country/${country_1.countryInfo.iso3}`);
+                    let second = await axios.get(`https://covidapi.info/api/v1/country/${country_2.countryInfo.iso3}`);
+                    if (first && second) {
+                        const pre = [ first.data.result, second.data.result ]
+                        const data = this.props.setDataSeries(pre, status)
+                        this.setState({ tlc1: data[0], tlc2: data[1] }); 
+                    }
                 }
             }
         }

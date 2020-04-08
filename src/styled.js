@@ -151,8 +151,9 @@ export const ChartChoice = styled.div`
 `;
 
 export const LastUpdated = styled.div`
+    width: 100%;
     position: absolute;
-    top: -8px;
+    top: -13px;
     left: 50%;
     font-size: 12px;
     color: grey;

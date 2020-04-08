@@ -28,7 +28,6 @@ class headSection extends Component {
 
     setStatus = () => {
         const { infoData, updated } = this.state;
-
         return (
             <div style={{ position: 'relative' }}>
                 <LastUpdated>Terakhir diperbarui: { updated }</LastUpdated>

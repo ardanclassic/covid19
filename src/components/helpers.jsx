@@ -6,7 +6,6 @@ import { ModLoader, HeadSection } from '../styled';
 export const headTitle = (data) => {
     let transform = null;
     if (data.icon === 'phone') transform = 'rotate(90deg)';
-    
     return (
         <HeadSection>
             <Header as='h2'>
