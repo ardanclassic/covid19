@@ -73,6 +73,7 @@ class chartSection extends Component {
     
     setDataTimeline = async (a, b) => {
         if (a && b) {
+            console.log(a, b)
             const { status } = this.state;
             let first = await axios.get(`https://covidapi.info/api/v1/country/${a.countryInfo.iso3}`);
             let second = await axios.get(`https://covidapi.info/api/v1/country/${b.countryInfo.iso3}`);
