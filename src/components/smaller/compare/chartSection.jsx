@@ -32,9 +32,9 @@ class chartSection extends Component {
         }
     }
 
-    componentDidUpdate = async (prevProps, prevState) => {
+    componentDidUpdate(prevProps, prevState) {
         this.mounted = true;
-        const { country_1, country_2 } = await this.props;
+        const { country_1, country_2 } = this.props;
         const { tlc1, tlc2, x_axis, status } = this.state;
         const pre1 = prevProps.country_1 !== country_1;
         const pre2 = prevProps.country_2 !== country_2;
@@ -45,7 +45,6 @@ class chartSection extends Component {
         if (pre1 || pre2 || sort) {
             if (country_1 && country_2) {
                 if (this.mounted) {
-                    console.log(country_1, country_2)
                     this.setDataTimeline(country_1, country_2)
                 }
             }

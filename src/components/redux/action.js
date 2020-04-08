@@ -4,15 +4,15 @@ export const initCountryName = (data) => (dispatch) => {
     dispatch({ type: 'COUNTRY_NAME', value: data });
 }
 
-export const setCountrySelected = (id, name) => (dispatch) => {
-    axios.get(`LMAO/countries/${name}`)
-    .then(res => {
+export const setCountrySelected = (id, name) => async (dispatch) => {
+    let res = await axios.get(`LMAO/countries/${name}`);
+    if(res) {
         if (id === 1) {
             dispatch({ type: 'COUNTRY_1', value: res.data });
         } else {
             dispatch({ type: 'COUNTRY_2', value: res.data });
         }
-    })
+    }
 }
 
 export const setShowStatus = () => (dispatch) => {
