@@ -1,11 +1,11 @@
 ## Coronavirus Tracking
 
-Assalamu'alaikum warahmatullah wabarakatuh.
+Assalamu'alaikum warahmatullah wabarakatuh. <br>
 Hello there! Thank you for coming and see my project.
 
-I build this to help people get and update about coronavirus info.
-I also shared some api references to help developers build the same project.
-Hope it will helps.
+I build this to help people get and update about coronavirus info. <br>
+I also shared some api references to help developers build the same project. <br>
+Hope it will help. <br>
 
 
 ### `API Reference`
