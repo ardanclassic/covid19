@@ -12,7 +12,7 @@ class Headnav extends Component {
 
     componentDidMount() {
         const path = (window.location.pathname).slice(1);
-        if (path === '') this.setState({ activeItem: 'global' });
+        if (path === '') this.setState({ activeItem: 'indonesia' });
         else this.setState({ activeItem: path });
     }
 
@@ -38,11 +38,11 @@ class Headnav extends Component {
                                 <Button icon='bars' color='black' onClick={this.showMenu} />
                             </Responsive>
                             <Responsive as={React.Fragment} minWidth={768}>
-                                <Menu.Item name='Global' id='global' as={ Link } to='/'
-                                    active={ activeItem === 'global' }
+                                <Menu.Item name='Indonesia' id='indonesia' as={ Link } to='/'
+                                    active={ activeItem === 'indonesia' }
                                     onClick={ this.handleItemClick } />
-                                <Menu.Item name='Indonesia' id='indonesia' as={ Link } to='/indonesia'
-                                    active={activeItem === 'indonesia'}
+                                <Menu.Item name='Global' id='global' as={ Link } to='/global'
+                                    active={activeItem === 'global'}
                                     onClick={this.handleItemClick} />
                                 <Menu.Item name='Compare' id='compare' as={ Link } to='/compare'
                                     active={activeItem === 'compare'}

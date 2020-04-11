@@ -24,6 +24,10 @@
     border-bottom: none;
 }
 
+.overlay-content .mobmenu-active a {
+    color: #ff4500;
+}
+
 .overlay a {
     text-decoration: none;
     font-size: 26px;
