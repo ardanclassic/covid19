@@ -3,7 +3,7 @@
 Assalamu'alaikum warahmatullah wabarakatuh. <br>
 Hello there! Thank you for coming and see my project.
 
-I build this to help people get and update about coronavirus info. <br>
+I build this to help people (especially for Indonesian) get and update about coronavirus info. <br>
 I also shared some api references to help developers build the same project. <br>
 Hope it will help. <br>
 
