@@ -11,6 +11,10 @@
 # production
 # /build
 
+# backend
+server.js
+netlify.toml
+
 # misc
 .DS_Store
 .env.local
