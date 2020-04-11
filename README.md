@@ -7,10 +7,9 @@ I build this to help people get and update about coronavirus info. <br>
 I also shared some api references to help developers build the same project. <br>
 Hope it will help. <br>
 
-### [Live App](https://indocovid.netlify.com/)
-<br>
+### Visit the live project : [Indocovid](https://indocovid.netlify.com/)
 
-### `API Reference`
+### API Reference
 - **CovidAPI Info** : https://documenter.getpostman.com/view/2568274/SzS8rjbe?version=latest
 - **NOVELCovid** : https://github.com/novelcovid/api
 - **Kawal Corona** : https://kawalcorona.com/api/
