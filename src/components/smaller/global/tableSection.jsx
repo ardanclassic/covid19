@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CountryTable, CaseSection } from '../../../styled';
 import { Table, Label, Divider } from 'semantic-ui-react';
-import { cellAdjust, LoadTable } from '../../helpers';
+import { cellAdjust, LoadTable, NumFormat } from '../../helpers';
 import axios from 'axios';
 
 class tableSection extends Component {
@@ -35,10 +35,10 @@ class tableSection extends Component {
                         <Table.Cell>{ i + 1 }</Table.Cell>
                         <Table.Cell><img src={ data.countryInfo.flag } alt="country-flag"/></Table.Cell>
                         { cellAdjust(data.country) }
-                        <Table.Cell>{ data.cases }</Table.Cell>
-                        <Table.Cell>{ data.active }</Table.Cell>
-                        <Table.Cell>{ data.recovered }</Table.Cell>
-                        <Table.Cell>{ data.deaths }</Table.Cell>
+                        <Table.Cell>{ NumFormat(data.cases) }</Table.Cell>
+                        <Table.Cell>{ NumFormat(data.active) }</Table.Cell>
+                        <Table.Cell>{ NumFormat(data.recovered) }</Table.Cell>
+                        <Table.Cell>{ NumFormat(data.deaths) }</Table.Cell>
                     </Table.Row>
                 )
             } else {
@@ -57,7 +57,7 @@ class tableSection extends Component {
                             <Table.HeaderCell>No.</Table.HeaderCell>
                             <Table.HeaderCell>###</Table.HeaderCell>
                             <Table.HeaderCell>Negara</Table.HeaderCell>
-                            <Table.HeaderCell>Total</Table.HeaderCell>
+                            <Table.HeaderCell>Positif</Table.HeaderCell>
                             <Table.HeaderCell>Aktif</Table.HeaderCell>
                             <Table.HeaderCell>Sembuh</Table.HeaderCell>
                             <Table.HeaderCell>Meninggal</Table.HeaderCell>
@@ -79,6 +79,9 @@ class tableSection extends Component {
             <React.Fragment>
                 <h2 style={{textAlign: 'left'}}>Data Global</h2>
                 <Divider />
+                <div style={{ textAlign: 'left', marginBottom: 8, color: 'grey' }}>
+                    Urutkan berdasarkan
+                </div>
                 <CaseSection>
                     <Label content='Positif' onClick={ () => this.clickLabel('all') }
                             className={ this.state.status === 'all' ? 'active' : null } />

@@ -22,13 +22,13 @@ export const InfoStatus = (data, status) => {
         let ico = null;
         if (status === 'Total Positif') {
             ico = <Icon name="wheelchair" />
-            data = data.cases;
+            data = NumFormat(data.cases);
         } else if (status === 'Total Sembuh') {
             ico = <Icon name="child" />
-            data = data.recovered;
+            data = NumFormat(data.recovered);
         } else {
             ico = <Icon name="bed" />
-            data = data.deaths;
+            data = NumFormat(data.deaths);
         }
         return (
             <React.Fragment>
@@ -145,3 +145,16 @@ export const LoadTable = () => {
     )
 }
 
+export const NumFormat = (data) => {
+    let	number_string = data.toString();
+	let sisa 	= number_string.length % 3;
+	let ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+	let current	= number_string.substr(0, sisa);
+		
+    if (ribuan) {
+        const separator = sisa ? '.' : '';
+        current += separator + ribuan.join('.');
+    }
+
+    return current;
+}

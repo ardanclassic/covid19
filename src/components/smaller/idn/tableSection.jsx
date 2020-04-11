@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ProvinsiTable, CaseSection } from '../../../styled';
 import { Table, Label, Divider } from 'semantic-ui-react';
-import { cellAdjust, LoadTable } from '../../helpers';
+import { cellAdjust, LoadTable, NumFormat } from '../../helpers';
 import axios from 'axios';
 
 class tableSection extends Component {
@@ -39,9 +39,9 @@ class tableSection extends Component {
                 <Table.Row key={ data.attributes.Kode_Provi }>
                     <Table.Cell>{ i + 1 }</Table.Cell>
                     { cellAdjust(data.attributes.Provinsi) }
-                    <Table.Cell>{ data.attributes.Kasus_Posi }</Table.Cell>
-                    <Table.Cell>{ data.attributes.Kasus_Semb }</Table.Cell>
-                    <Table.Cell>{ data.attributes.Kasus_Meni }</Table.Cell>
+                    <Table.Cell>{ NumFormat(data.attributes.Kasus_Posi) }</Table.Cell>
+                    <Table.Cell>{ NumFormat(data.attributes.Kasus_Semb) }</Table.Cell>
+                    <Table.Cell>{ NumFormat(data.attributes.Kasus_Meni) }</Table.Cell>
                 </Table.Row>
             )
         })
@@ -56,7 +56,7 @@ class tableSection extends Component {
                         <Table.Row>
                             <Table.HeaderCell>No.</Table.HeaderCell>
                             <Table.HeaderCell>Provinsi</Table.HeaderCell>
-                            <Table.HeaderCell>Total</Table.HeaderCell>
+                            <Table.HeaderCell>Positif</Table.HeaderCell>
                             <Table.HeaderCell>Sembuh</Table.HeaderCell>
                             <Table.HeaderCell>Meninggal</Table.HeaderCell>
                         </Table.Row>
@@ -77,6 +77,9 @@ class tableSection extends Component {
             <React.Fragment>
                 <h2 style={{textAlign: 'left'}}>Data Provinsi</h2>
                 <Divider />
+                <div style={{ textAlign: 'left', marginBottom: 8, color: 'grey' }}>
+                    Urutkan berdasarkan
+                </div>
                 <CaseSection>
                     <Label content='Positif' onClick={ () => this.clickLabel('all') }
                             className={ this.state.status === 'all' ? 'active' : null } />

@@ -105,6 +105,9 @@ class chartSection extends Component {
     showButton = () => {
         return (
             <React.Fragment>
+                <div style={{ textAlign: 'left', marginBottom: 8, color: 'grey' }}>
+                    Grafik Berdasarkan
+                </div>
                 <CaseSection>
                     <Label content='Positif' onClick={ () => this.clickLabel('all') }
                             className={ this.state.status === 'all' ? 'active' : null } />
