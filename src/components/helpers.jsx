@@ -146,15 +146,18 @@ export const LoadTable = () => {
 }
 
 export const NumFormat = (data) => {
-    let	number_string = data.toString();
-	let sisa 	= number_string.length % 3;
-	let ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
-	let current	= number_string.substr(0, sisa);
-		
-    if (ribuan) {
-        const separator = sisa ? '.' : '';
-        current += separator + ribuan.join('.');
+    // console.log(data)
+    if (data) {
+        let	number_string = data.toString();
+        let sisa 	= number_string.length % 3;
+        let ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+        let current	= number_string.substr(0, sisa);
+            
+        if (ribuan) {
+            const separator = sisa ? '.' : '';
+            current += separator + ribuan.join('.');
+        }
+    
+        return current;
     }
-
-    return current;
 }
