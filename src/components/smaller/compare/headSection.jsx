@@ -20,7 +20,7 @@ class headSection extends Component {
     componentDidMount = async () => {
         animateScroll.scrollToTop();
         this.mounted = true;
-        let countries = await axios.get('https://corona.lmao.ninja/countries?sort=country');
+        let countries = await axios.get('https://corona.lmao.ninja/v2/countries?sort=country');
         if (countries && this.mounted) {
             let dtName = [];
             countries.data.map(name => { 

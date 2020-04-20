@@ -13,7 +13,7 @@ class tableSection extends Component {
     componentWillUnmount() { this.mounted = false; }
     componentDidMount = async () => {
         this.mounted = true;
-        let countries = await axios.get('https://corona.lmao.ninja/countries?sort=country');
+        let countries = await axios.get('https://corona.lmao.ninja/v2/countries?sort=country');
         if (countries && this.mounted) this.setState({ LMAOCountry: countries.data })
     }
 

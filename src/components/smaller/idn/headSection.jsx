@@ -16,7 +16,7 @@ class headSection extends Component {
     componentDidMount = async () => {
         window.scrollTo(0, 0)
         this.mounted = true;
-        let indonesia = await axios.get('https://corona.lmao.ninja/countries/indonesia');
+        let indonesia = await axios.get('https://corona.lmao.ninja/v2/countries/indonesia');
         if (indonesia && this.mounted) {
             const date = timeConverter(indonesia.data.updated, 'short');
             this.setState({ 

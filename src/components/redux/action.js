@@ -5,7 +5,7 @@ export const initCountryName = (data) => (dispatch) => {
 }
 
 export const setCountrySelected = (id, name) => async (dispatch) => {
-    let res = await axios.get(`https://corona.lmao.ninja/countries/${name}`);
+    let res = await axios.get(`https://corona.lmao.ninja/v2/countries/${name}`);
     if(res) {
         if (id === 1) {
             dispatch({ type: 'COUNTRY_1', value: res.data });

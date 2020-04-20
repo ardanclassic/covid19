@@ -20,7 +20,7 @@ class headSection extends Component {
     componentDidMount = async () => {
         window.scrollTo(0, 0)
         this.mounted = true;
-        let global = await axios.get('https://corona.lmao.ninja/all');
+        let global = await axios.get('https://corona.lmao.ninja/v2/all');
         if (global && this.mounted) {
             const date = timeConverter(global.data.updated, 'short');
             this.setState({ dataGlobal: global.data, updated: date })

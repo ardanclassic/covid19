@@ -159,5 +159,7 @@ export const NumFormat = (data) => {
         }
     
         return current;
+    } else {
+        return '0'
     }
 }
